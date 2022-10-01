@@ -1,5 +1,5 @@
 import numpy as np
-from src.pdi_utils import load_flipped_seville, show_image
+from PDI.src.pdi_utils import load_flipped_seville, show_image
 
 
 flipped_seville = load_flipped_seville()

@@ -1,6 +1,6 @@
 from skimage import color
 
-from src.pdi_utils import show_image , load_chess_image
+from PDI.src.pdi_utils import show_image , load_chess_image
 from skimage.color import rgb2gray
 
 # Import the otsu threshold function

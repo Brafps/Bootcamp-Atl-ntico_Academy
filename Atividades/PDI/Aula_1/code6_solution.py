@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from skimage import color
 
-from src.pdi_utils import load_lena
+from PDI.src.pdi_utils import load_lena
 
 # Import the try all function
 from skimage.filters  import try_all_threshold

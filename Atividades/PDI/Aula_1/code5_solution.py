@@ -1,5 +1,5 @@
 from skimage.color import rgb2gray
-from src.pdi_utils import load_page_image,show_image,manual_rgb2gray
+from PDI.src.pdi_utils import load_page_image,show_image,manual_rgb2gray
 
 # Import the otsu threshold function
 from skimage.filters import threshold_otsu

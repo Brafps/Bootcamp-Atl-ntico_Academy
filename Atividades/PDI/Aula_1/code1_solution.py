@@ -1,4 +1,4 @@
-from src.pdi_utils import show_image
+from PDI.src.pdi_utils import show_image
 # Import the modules from skimage
 from skimage import color, data
 

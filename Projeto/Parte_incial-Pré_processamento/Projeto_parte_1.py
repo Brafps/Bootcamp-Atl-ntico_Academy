@@ -9,15 +9,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 #Caminho onde estão localizados os arquivos de imagem
-caminho_benigno = r'DataSet\all_nods_benignos'
+caminho_tb = 'DataSet\\all_nods_benignos'
 
-caminho_maligno = r'DataSet\all_nods_malignos'
+caminho_tm = 'DataSet\\all_nods_malignos'
 
 #Montando as listas com os nomes dos arquivos
-for root, dirs, files in os.walk(caminho_benigno):
+for root, dirs, files in os.walk(caminho_tb):
     dataset_benigno = [file for file in files]
 
-for root, dirs, files in os.walk(caminho_maligno):
+for root, dirs, files in os.walk(caminho_tm):
     dataset_maligno = [file for file in files]
 
 dataset = sorted(dataset_benigno + dataset_maligno)
@@ -29,10 +29,10 @@ img_selecionada = random.choice(dataset)
 
 #Definindo o caminho para uso da função cv2.read() e posterior mostra da imagem.
 if img_selecionada in dataset_benigno:
-    path = caminho_benigno + "\\" + img_selecionada
+    path = caminho_tb + "\\" + img_selecionada
     img = cv2.imread(path)
 else:
-    path = caminho_maligno + "\\" + img_selecionada
+    path = caminho_tm + "\\" + img_selecionada
     img = cv2.imread(path)
 
 #Mostrando o local da imagem
