@@ -1,11 +1,23 @@
-# Bootcamp-Atlantico_Academy
-> Repositório do curso de Machine Learning
+# Orientações
 
-## Sobre
+1. Editar
+2. Editar
+3. Editar
 
-O [Instituto atlântico](https://www.atlantico.com.br/) é uma instituição de ciência e tecnologia (ICT), sendo uma das principais do nordeste em pesquisa. 
+--
 
-O [Atlântico Academy Bootcamp](https://www.atlantico.com.br/academy-bootcamp/) é um programa de capacitação gratuito. O Bootcamp, nada mais é, do que um treinamento intensivo para que seus estudantes absorvam o conhecimento teórico de maneira conjunta com a prática.
+## Raíz do projeto
+Orientações :
+Os arquivos .py devem realizar a chamada de uma única função que executa todo o pipiline proposto de cada projeto. A pasta src deve conter as funções e implementações dos pipilines. Todas as funções devem ser documentadas explicando qual a finalidade desta, o que significam os argumentos de entrada, se houver, e o retorno.
 
-![BOOTCAMP](BOOTCAMP.png)
+### PDI
+A pasta PDI contem as funções e pipilines exclusivos para PDI e nenhuma outra categoria
+
+### vc
+A pasta nlp contem as funções e pipilines exclusivos para processamento digital de imagens(pdi) e machine learning e nenhuma outra categoria. Funções que manipulam imagens (pré-processamento, segmentção..) são definidas e implementadas nesse .py. Funções que utilizam classificadores, treinamento, normalização de dados e outras técnicas relacioanadas com machine learning devem ser implementadas em machine_learning.py.
+
+### utils
+Funções que são genéricas de entrada de arquivos, para mostrar gráficos, leitura de arquivos, escrita devem ser implementadas dentro da pasta utils. Neste caso é possivel subcategorizar se necessário, criando mais arquivos .py para alguma categoria específica dentro da pasta utils, por exemplo, arquivo .py destiado exclusivo para implementações de funções de leitura e escrita de arquivos.
+
+
 
