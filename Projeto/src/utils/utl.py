@@ -12,6 +12,7 @@ def show_img(titulo, img, a = 6.4, b = 4.8):
     plt.imshow(img, cmap='gray')
     plt.show()
 
+
 def save_image(image,image_name):
     '''
     :param image: variável que contém a imagem
@@ -20,3 +21,8 @@ def save_image(image,image_name):
     '''
     path = "img_salvas\\"+f'{image_name}'+".PNG"
     cv2.imwrite(path, image)
+
+
+def escreve(img, texto, cor=(255,0,0)):
+    fonte = cv2.FONT_HERSHEY_SIMPLEX 
+    cv2.putText(img, texto, (10,20), fonte, 0.5, cor, 0, cv2.LINE_AA)
