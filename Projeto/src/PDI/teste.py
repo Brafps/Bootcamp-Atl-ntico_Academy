@@ -6,16 +6,16 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-from src.utils.utl import show_img
-from src.PDI.vc import recorte
+from src.utils.utl import show_img, save_image
+from src.PDI.vc import cut_img
 
+img = cv2.imread("LIDC-IDRI-00440.PNG")
 
-recorte()
+recorte = cut_img(img, 50, 50)
 
-show_img("recorte", img)
+show_img("recorte da imagem", recorte)
 
-
-
+save_image(recorte, "recortedaimagem")
 
 
 
