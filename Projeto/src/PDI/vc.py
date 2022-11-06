@@ -9,8 +9,7 @@ def cut_img(imagem, l = 50, a = 50):
     :param a: altura desejada para o recorte.
     :return: recorte da imagem com seu centro no centro da imagem original.
     '''
-    (largura, altura) = (imagem.shape[0], imagem.shape[1])
-    (c_x, c_y) = (largura//2, altura//2)
+    (c_x, c_y) = (100, 100)
     return imagem[c_x - l: c_x + l, c_y - a: c_y + a]
 
 
@@ -30,3 +29,4 @@ def histograma(name, img):
     plt.xlim([0, 256])
     plt.show()
     cv2.waitKey(0)
+

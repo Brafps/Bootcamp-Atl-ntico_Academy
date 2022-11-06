@@ -31,7 +31,7 @@ def save_img(img,img_name):
     cv2.imwrite(path, img)
 
 
-def escrever(img, texto, cor=(255,0,0)):
+def escrever(img, texto, cor=(255, 0, 0)):
     '''
     :param img: variável que contém a imagem
     :param texto: texto a ser colocado na imagem
@@ -39,12 +39,12 @@ def escrever(img, texto, cor=(255,0,0)):
     :return: coloca um texto na imagem escolhida
     '''
     fonte = cv2.FONT_HERSHEY_SIMPLEX 
-    cv2.putText(img, texto, (10,20), fonte, 0.5, cor, 0, cv2.LINE_AA)
+    cv2.putText(img, texto, (10,20), fonte, 0.3, cor, 0, cv2.LINE_AA)
 
 
 def load_random_img():
     '''
-    :return: retorna o par (nome da imagem, imagem) a imagem é aleatória.
+    :return: retorna a tripla (nome da imagem, imagem, tipo) a imagem é aleatória.
     '''
     # Caminhos para os DataSets
     path_dataSet_benigno = "..\\..\\DataSet\\all_nods_benignos"
@@ -69,19 +69,23 @@ def load_random_img():
     if img_selecionada in dataset_benigno:
         path = os.path.join(path_dataSet_benigno, img_selecionada)
         img = cv2.imread(path)
+        tipo = "Benigno"
+        print("Tumor Benigno")
     else:
         path = os.path.join(path_dataSet_maligno, img_selecionada)
         img = cv2.imread(path)
+        tipo = "Maligno"
+        print("Tumor Maligno")
 
     # Passando para cinza
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    return (f"{img_selecionada}", img_gray)
+    return (f"{img_selecionada}", img_gray, tipo)
 
 
 def load_img(name_img):
     '''
-    :param name_img: Nome da imagem no dataset com extensão.
+    :param name_img: número da imagem no dataset com 5 dígitos.
     :return: carrega a imagem desejada já em cinza.
     '''
     # Caminhos para os DataSets
@@ -99,17 +103,19 @@ def load_img(name_img):
     dataset = sorted(dataset_benigno + dataset_maligno)
 
     # Selecionando uma imagem qualquer
-    img_selecionada = name_img
+    img_selecionada = f"LIDC-IDRI-{name_img}.png"
 
     # Definindo o caminho para uso da função cv2.read() e posterior mostra da imagem.
     if img_selecionada in dataset_benigno:
         path = os.path.join(path_dataSet_benigno, img_selecionada)
         img = cv2.imread(path)
+        tipo = "Benigno"
     else:
         path = os.path.join(path_dataSet_maligno, img_selecionada)
         img = cv2.imread(path)
+        tipo = "Maligno"
 
     # Passando para cinza
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    return img_gray
+    return (img_selecionada, img_gray, tipo)
