@@ -2,7 +2,7 @@
 
 Repositório do curso de Machine Learning
 
-## 🚀 Começando
+## 🚀 Sobre
 
 O [Instituto atlântico](https://www.atlantico.com.br/) é uma instituição de ciência e tecnologia (ICT), sendo uma das principais do nordeste em pesquisa. O [Atlântico Academy Bootcamp](https://www.atlantico.com.br/academy-bootcamp/) é um programa de capacitação gratuito. O Bootcamp, nada mais é, do que um treinamento intensivo para que seus estudantes absorvam o conhecimento teórico de maneira conjunta com a prática.
 
@@ -38,9 +38,6 @@ O [Instituto atlântico](https://www.atlantico.com.br/) é uma instituição de 
 * [Anaconda](https://www.anaconda.com) - Plataforma de Data Science
 * [Kaggle](https://www.kaggle.com) - Plataforma de Pesquisas
 
-
-
-
 ## 🖇️ Colaborando
 
 Por favor, leia o [COLABORACAO.md]() para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
@@ -56,7 +53,7 @@ Por favor, leia o [COLABORACAO.md]() para obter detalhes sobre o nosso código d
 
 ## 📄 Licença
 
-Este projeto está sob a licença (MIT) - veja o arquivo [LICENSE.md](https://github.com/Brafps/Bootcamp-Atlantico_Academy/LICENSE) para detalhes.
+Este projeto está sob a licença (MIT) - veja o arquivo [LICENSE.md](https://github.com/Brafps/Bootcamp-Atlantico_Academy/blob/main/LICENSE) para detalhes.
 
 ## 🎁 Expressões de gratidão
 
