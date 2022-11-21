@@ -10,49 +10,58 @@ from skimage import segmentation
 
 
 from src.utils.utl import load_random_img, show_img, load_img, escrever
-from vc import histograma, cut_img
+from vc import histograma, cut_img, white_to_gray, define_pleural_nod, remove_pleura
 
 #(nome , img, tipo) = load_random_img()
-(nome , img, tipo) = load_img("08540")
-
-
+(nome , img, tipo) = load_img("00490")
 
 
 img = cut_img(img)
 original = img
 
-lista = []
+
+img = white_to_gray(img)
+
+
+
+gray = img[50, 50]
+gray_m =img[50, 50]
+(c_1, c_2) = (50, 50)
 for i in range(9):
-  lista.append(img[46 + i, 50])
-  lista.append(img[50, 46 + i])
-tom_de_cinza = max(lista)
-print(lista)
+  # Horizontal vertical
+  if img[46 + i, 50] > img[50, 46 + i]:
+    if img[46 + i, 50] > gray:
+      (c_1, c_2) = (46 + i, 50)
+      gray = img[46 + i, 50]
+  else:
+    if img[50, 46 + i] > gray:
+      (c_1, c_2) = (50, 46 + i)
+      gray = img[50, 46 + i]
+
+if gray < 90:
+  tol = 30
+else:
+  tol = 90
+
+print(gray)
+print((c_1, c_2))
 
 
 
-print(img[50, 50])
 img = cv2.GaussianBlur(img, (3,3), 0)
-print(img[50, 50])
-img = segmentation.flood_fill(img, (50, 50), 255, tolerance = 10)
-print(img[50, 50])
-img = cv2.threshold(img, 254, tom_de_cinza, cv2.THRESH_TOZERO)[1]
+#show_img("Img_Gau", img)
+img = segmentation.flood_fill(img, (c_1, c_2), 255, tolerance = tol)
+#show_img("Img_seg", img)
+img = cv2.threshold(img, 254, 255, cv2.THRESH_TOZERO)[1]
+#show_img("Img_tre", img)
 
-
-
-img_modified = img.copy()
-original_img = img
-
-
-for i, key_i in enumerate(img):
-  for j,key_j in enumerate(img[i]):
-
-    if key_j > 254:
-      img_modified[i][j] = original_img[i][j]
-    else:
-      img_modified[i][j] = img[i][j]
 
 # Passando a mascara
-img_mask = cv2.bitwise_and(original, original, mask = img_modified)
+img_mask = cv2.bitwise_and(original, original, mask = img)
+
+
+if define_pleural_nod(img_mask):
+  img_mask = remove_pleura(img_mask, c_1, c_2)
 
 
 escrever(img_mask, "Segmentada")
