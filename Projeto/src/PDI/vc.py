@@ -41,8 +41,8 @@ def white_to_gray(img):
 
 def define_pleural_nod(img, perc=0.3):
   count = 0
-
   img_binary = cv2.threshold(img.copy(), 70, 255, cv2.THRESH_BINARY)[1]
+
 
   for i in range(100):
 

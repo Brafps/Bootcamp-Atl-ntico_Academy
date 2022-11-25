@@ -8,7 +8,7 @@ from src.utils.utl import load_random_img, show_img, load_img, escrever
 from vc import histograma, cut_img
 
 #(nome , img, tipo) = load_random_img()
-(nome , img, tipo) = load_img("04810")
+(nome , img, tipo) = load_img("09611")
 
 
 
@@ -19,11 +19,11 @@ original = img
 
 
 img = cv2.GaussianBlur(img, (3,3), 0)
-show_img("GB", img)
+#show_img("GB", img)
 img = segmentation.flood_fill(img, (50, 50), 255, tolerance = 60)
-show_img("FF", img)
+#show_img("FF", img)
 img = cv2.threshold(img, 254, 70, cv2.THRESH_TOZERO)[1]
-show_img("Mask", img)
+#show_img("Mask", img)
 
 img_modified = img.copy()
 original_img = img
